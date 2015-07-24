@@ -13,7 +13,7 @@
 	},
 	"main":"lib/index.js",
 	"scripts":{
-		"postinstall":"gulp install && gulp build"
+		"postinstall":"node_modules/.bin/gulp install && node_modules/.bin/gulp build"
 	},
 	"engines":{
 		"node":"~0.12"
