@@ -1,0 +1,6 @@
+[submodule "node_modules/odin"]
+	path = node_modules/odin
+	url = https://github.com/bhamon/node-odin
+[submodule "node_modules/odin-http"]
+	path = node_modules/odin-http
+	url = https://github.com/bhamon/node-odin-http
