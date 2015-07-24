@@ -13,7 +13,7 @@
 	},
 	"main":"lib/index.js",
 	"scripts":{
-		"postinstall":"node_modules/.bin/gulp install && node_modules/.bin/gulp build"
+		"postinstall":"gulp install && gulp build"
 	},
 	"engines":{
 		"node":"~0.12"
@@ -26,8 +26,6 @@
 		"body-parser":"~1.9",
 		"cors":"~2.5",
 		"nodemailer":"~1.3"
-	},
-	"devDependencies":{
 		"gulp":"~3.8",
 		"gulp-rename":"~1.2",
 		"gulp-bower":"~0.0",
