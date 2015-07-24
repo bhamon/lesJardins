@@ -1,0 +1,59 @@
+<md-toolbar md-theme="dark" class="md-hue-3">
+	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="Retour" ng-click="gotoBack()">
+			<md-icon md-font-library="material-icons" class="md-24">arrow_back</md-icon>
+		</md-button>
+		<h3>Actualités</h3>
+		<span>&nbsp;/&nbsp;</span>
+		<h3>Article</h3>
+		<span>&nbsp;/&nbsp;</span>
+		<h4>{{article.title}}</h4>
+		<span flex></span>
+		<md-button class="md-icon-button" aria-label="Modifier l'article" ng-click="edit()">
+			<md-tooltip md-theme="default">Modifier</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">create</md-icon>
+		</md-button>
+	</div>
+</md-toolbar>
+<md-card>
+	<md-card-content>
+		<div class="md-caption lesJardins-article-meta">Publié le {{article.date | date:'dd/MM/yyyy à HH:mm:ss'}} par {{article.author.firstName}} {{article.author.lastName}}.</div>
+		<div marked="article.text"></div>
+	</md-card-content>
+</md-card>
+<md-content flex offset="5">
+	<h3 ng-if="article.comments.length" class="md-title">Commentaires</h3>
+	<md-card ng-repeat="comment in article.comments">
+		<md-card-content>
+			<div class="md-caption lesJardins-comment-meta">Publié le {{comment.date | date:'dd/MM/yyyy à HH:mm:ss'}} par {{comment.author.firstName}} {{comment.author.lastName}}.</div>
+			<div marked="comment.text"></div>
+		</md-card-content>
+	</md-card>
+	<h3 class="md-title">Ajouter un commentaire</h3>
+	<md-content layout="row" layout-md="column">
+		<md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Ajouter le commentaire" ng-click="comment()">
+			<md-icon md-font-library="material-icons" class="md-24">done</md-icon>
+		</md-button>
+		<md-card flex>
+			<md-content class="lesJardins-comment-help" layout="row" layout-align="end">
+				<md-button class="md-icon-button" ng-href="https://fr.wikipedia.org/wiki/Markdown" target="_blank" aria-label="Aide pour la mise en forme">
+					<md-tooltip>Mise en forme</md-tooltip>
+					<md-icon md-font-library="material-icons" class="md-24">help</md-icon>
+				</md-button>
+			</md-content>
+			<md-card-content>
+				<form name="formComment">
+					<md-input-container>
+						<textarea ng-model="data.text" aria-label="Commentaire" md-maxlength="1000" required></textarea>
+					</md-input-container>
+				</form>
+			</md-card-content>
+		</md-card>
+		<md-card flex>
+			<md-card-content>
+				<div class="md-caption lesJardins-comment-meta">Publié le {{now | date:'dd/MM/yyyy à HH:mm:ss'}} par {{user.firstName}} {{user.lastName}}.</div>
+				<div marked="data.text"></div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</md-content>

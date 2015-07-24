@@ -1,0 +1,22 @@
+<md-toolbar md-theme="dark" class="md-hue-3">
+	<div class="md-toolbar-tools">
+		<h3>Administration</h3>
+		<p>&nbsp;/&nbsp;</p>
+		<h4>Bâtiments</h4>
+		<span flex></span>
+		<md-button class="md-icon-button" aria-label="Créer un nouveau bâtiment" ng-click="create()">
+			<md-tooltip md-theme="default">Ajouter</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">add</md-icon>
+		</md-button>
+	</div>
+</md-toolbar>
+<md-list>
+	<md-list-item ng-repeat="building in buildings" class="md-2-line" ng-click="view(building)">
+		<md-icon md-font-library="material-icons" class="md-36">business</md-icon>
+		<div class="md-list-item-text">
+			<h3>{{building.name}}</h3>
+			<p>Ce bâtiment contient {{building.apartmentsCount}} appartements.</p>
+		</div>
+		<md-icon md-font-library="material-icons" class="md-24 md-secondary" aria-label="Supprimer le bâtiment" ng-click="remove(building)">delete</md-icon>
+	</md-list-item>
+</md-list>
