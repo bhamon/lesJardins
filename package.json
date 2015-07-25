@@ -22,7 +22,9 @@
 		"joi":"~6.4",
 		"body-parser":"~1.9",
 		"cors":"~2.5",
-		"nodemailer":"~1.3"
+		"nodemailer":"~1.3",
+		"odin":"https://github.com/bhamon/node-odin#v0.1.2",
+		"odin-http":"https://github.com/bhamon/node-odin-http#v0.1.3"
 	},
 	"devDependencies":{
 		"gulp":"~3.8",
