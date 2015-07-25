@@ -12,9 +12,6 @@
 		"url":"https://github.com/bhamon/lesJardins.git"
 	},
 	"main":"lib/index.js",
-	"scripts":{
-		"postinstall":"gulp install && gulp build"
-	},
 	"engines":{
 		"node":"~0.12"
 	},
