@@ -15,14 +15,15 @@
 	},
 	"license":"MIT",
 	"main":"index.html",
-	"dependencies": {
+	"dependencies":{
 		"angular":"~1.4",
 		"angular-resource":"~1.4",
 		"angular-messages":"~1.4",
-		"angular-ui-router": "~0.2",
+		"angular-ui-router":"~0.2",
 		"angular-cookies":"~1.4",
-		"angular-material":"~0.10",
+		"angular-material":"~0.11",
 		"material-design-icons":"~2.0",
-		"angular-marked":"~0.0"
+		"angular-marked":"~0.0",
+		"freyja":"bhamon/angular-freyja#v0.1.0"
 	}
 }
