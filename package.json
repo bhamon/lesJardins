@@ -23,8 +23,19 @@
 		"cors":"~2.7",
 		"nodemailer":"~1.5",
 		"mongodb":"~2.0",
-		"odin":"https://github.com/bhamon/node-odin#es6",
-		"odin-http":"https://github.com/bhamon/node-odin-http#es6"
+		"odin":"bhamon/node-odin#es6",
+		"odin-http":"bhamon/node-odin-http#es6",
+		"angular":"~1.4",
+		"angular-resource":"~1.4",
+		"angular-messages":"~1.4",
+		"angular-animate": "~1.4",
+		"angular-aria": "~1.4",
+		"angular-cookies":"~1.4",
+		"angular-ui-router": "~0.2",
+		"angular-material": "~0.11",
+		"material-design-icons":"~2.0",
+		"angular-marked":"~0.0",
+		"freyja":"bhamon/angular-freyja#v0.1.8"
 	},
 	"devDependencies":{
 		"gulp":"~3.9",
