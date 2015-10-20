@@ -1,5 +1,5 @@
 <md-toolbar md-theme="dark" class="md-hue-3">
-	<div class="md-toolbar-tools">
+	<div md-theme="default" class="md-toolbar-tools">
 		<md-button class="md-icon-button" aria-label="Retour" ng-click="gotoBack()">
 			<md-icon md-font-library="material-icons" class="md-24">arrow_back</md-icon>
 		</md-button>
@@ -8,32 +8,64 @@
 		<h3>Utilisateurs</h3>
 		<p>&nbsp;/&nbsp;</p>
 		<h4>Nouvel utilisateur</h4>
+		<span flex></span>
+		<md-button class="md-icon-button" aria-label="Créer l'utilisateur" ng-click="save()">
+			<md-tooltip>Créer</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">done</md-icon>
+		</md-button>
 	</div>
 </md-toolbar>
-<md-button class="md-fab md-fab-bottom-right" aria-label="Créer l'utilisateur" ng-click="create()">
-	<md-icon md-font-library="material-icons" class="md-24">done</md-icon>
-</md-button>
 <form name="formUser">
 	<md-card>
 		<md-card-content>
 			<h2 class="md-title">Authentification</h2>
 			<md-input-container>
 				<label>Adresse e-mail</label>
-				<input name="login" ng-model="user.login" pattern="^[a-z]{4,20}$" required>
-				<div ng-messages="formUser.login.$error">
+				<input type="email" name="email" ng-model="data.email" required>
+				<div ng-messages="formUser.email.$error">
 					<div ng-message="required">Champ requis.</div>
-					<div ng-message="pattern">Login invalide.</div>
+					<div ng-message="email">Email invalide.</div>
 				</div>
 			</md-input-container>
 			<md-input-container>
 				<label>Mot de passe</label>
-				<input name="password" ng-model="user.password" pattern="^.{8,20}$" required>
+				<input type="password" name="password" ng-model="data.password" les-jardins:validator:password minlength="6" maxlength="100" required>
 				<div ng-messages="formUser.password.$error">
 					<div ng-message="required">Champ requis.</div>
-					<div ng-message="pattern">Mot de passe trop faible.</div>
+					<div ng-message="password">Le mot de passe doit contenir une minuscule, une majuscule et un chiffre.</div>
+					<div ng-message="minlength">Mot de passe trop court.</div>
+					<div ng-message="maxlength">Mot de passe trop long.</div>
+				</div>
+			</md-input-container>
+			<md-input-container>
+				<label>Confirmation</label>
+				<input type="password" name="confirmation" ng-model="data.confirmation" les-jardins:validator:confirmation="data.password" required>
+				<div ng-messages="formUser.confirmation.$error">
+					<div ng-message="required">Champ requis.</div>
+					<div ng-message="confirmation">La confirmation doit correspondre au mot de passe.</div>
 				</div>
 			</md-input-container>
 		</md-card-content>
 	</md-card>
-	<library:user-info user-info="user.info"></library:user-info>
+	<md-card>
+		<md-card-content>
+			<h2 class="md-title">Identité</h2>
+			<md-input-container>
+				<label>Prénom</label>
+				<input name="firstName" ng-model="data.firstName" maxlength="40" required>
+				<div ng-messages="formUser.firstName.$error">
+					<div ng-message="required">Champ requis.</div>
+					<div ng-message="maxlength">Champ trop grand.</div>
+				</div>
+			</md-input-container>
+			<md-input-container>
+				<label>Nom</label>
+				<input name="lastName" ng-model="data.lastName" maxlength="40" required>
+				<div ng-messages="formUser.lastName.$error">
+					<div ng-message="required">Champ requis.</div>
+					<div ng-message="maxlength">Champ trop grand.</div>
+				</div>
+			</md-input-container>
+		</md-card-content>
+	</md-card>
 </form>

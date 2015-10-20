@@ -16,34 +16,44 @@
 		<md-icon md-font-library="material-icons" class="md-24">person</md-icon>
 		<p>Profil</p>
 	</md-list-item>
+	<md-list-item ng-click="gotoChannels()">
+		<md-icon md-font-library="material-icons" class="md-24">forum</md-icon>
+		<p>Forum</p>
+	</md-list-item>
 	<md-list-item ng-click="gotoContact()">
 		<md-icon md-font-library="material-icons" class="md-24">mail</md-icon>
 		<p>Contact</p>
 	</md-list-item>
+</md-list>
+<md-list ng-if="wip">
 	<md-subheader>Outils</md-subheader>
 	<md-list-item ng-click="gotoServiceCharges()">
 		<md-icon md-font-library="material-icons" class="md-24">local_atm</md-icon>
 		<p>Charges</p>
 	</md-list-item>
+</md-list>
+<md-list ng-if="showCouncil()">
 	<md-subheader>Conseil syndical</md-subheader>
 	<md-list-item ng-click="gotoMeetings()">
 		<md-icon md-font-library="material-icons" class="md-24">event</md-icon>
 		<p>Réunions</p>
 	</md-list-item>
+</md-list>
+<md-list ng-if="showAdmin()">
 	<md-subheader>Administration</md-subheader>
-	<md-list-item ng-click="gotoAdminSettings()">
+	<md-list-item ng-if="admin.params" ng-click="gotoAdminParams()">
 		<md-icon md-font-library="material-icons" class="md-24">settings</md-icon>
 		<p>Paramètres</p>
 	</md-list-item>
-	<md-list-item ng-click="gotoAdminUsers()">
+	<md-list-item ng-if="admin.users" ng-click="gotoAdminUsers()">
 		<md-icon md-font-library="material-icons" class="md-24">people</md-icon>
 		<p>Utilisateurs</p>
 	</md-list-item>
-	<md-list-item ng-click="gotoAdminBuildings()">
+	<md-list-item ng-if="admin.buildings" ng-click="gotoAdminBuildings()">
 		<md-icon md-font-library="material-icons" class="md-24">business</md-icon>
 		<p>Bâtiments</p>
 	</md-list-item>
-	<md-list-item ng-click="gotoAdminCouncils()">
+	<md-list-item ng-if="admin.councils" ng-click="gotoAdminCouncils()">
 		<md-icon md-font-library="material-icons" class="md-24">event_seat</md-icon>
 		<p>Conseils</p>
 	</md-list-item>

@@ -1,5 +1,5 @@
 <md-toolbar md-theme="dark" class="md-hue-3">
-	<div class="md-toolbar-tools">
+	<div md-theme="default" class="md-toolbar-tools">
 		<md-button class="md-icon-button" aria-label="Retour" ng-click="gotoBack()">
 			<md-icon md-font-library="material-icons" class="md-24">arrow_back</md-icon>
 		</md-button>
@@ -10,7 +10,7 @@
 		<h4>{{building.name}}</h4>
 		<span flex></span>
 		<md-button class="md-icon-button" aria-label="Modifier le bâtiment" ng-click="edit()">
-			<md-tooltip md-theme="default">Modifier</md-tooltip>
+			<md-tooltip>Modifier</md-tooltip>
 			<md-icon md-font-library="material-icons" class="md-24">create</md-icon>
 		</md-button>
 	</div>
@@ -39,7 +39,7 @@
 			<h3>Appartements</h3>
 			<span flex></span>
 			<md-button class="md-icon-button" aria-label="Ajouter un appartement" ng-click="addApartment()">
-				<md-tooltip md-theme="default">Ajouter</md-tooltip>
+				<md-tooltip>Ajouter</md-tooltip>
 				<md-icon md-font-library="material-icons" class="md-24">add</md-icon>
 			</md-button>
 		</div>
@@ -61,7 +61,7 @@
 			<h3>Charges générales</h3>
 			<span flex></span>
 			<md-button class="md-icon-button" aria-label="Ajouter un poste" ng-click="addServiceCharge()">
-				<md-tooltip md-theme="default">Ajouter</md-tooltip>
+				<md-tooltip>Ajouter</md-tooltip>
 				<md-icon md-font-library="material-icons" class="md-24">add</md-icon>
 			</md-button>
 		</div>

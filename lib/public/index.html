@@ -4,24 +4,22 @@
 		<title>Les jardins de la Verrière</title>
 		<base href="/">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-		<!-- build:depsStyles styles/deps.min.css -->
-		<link rel="stylesheet" href="deps/angular-material/angular-material.css">
-		<!-- endbuild -->
+		<link rel="stylesheet" href="deps/angular-material/angular-material.min.css">
 		<!-- build:styles styles/lesJardins.min.css -->
 		<link rel="stylesheet" href="styles/open-sans.css">
 		<link rel="stylesheet" href="styles/material-icons.css">
 		<link rel="stylesheet" href="styles/lesJardins.css">
 		<!-- endbuild -->
 		<script src="deps/angular/angular.min.js"></script>
-		<script src="deps/angular-ui-router/release/angular-ui-router.js"></script>
-		<script src="deps/angular-aria/angular-aria.js"></script>
-		<script src="deps/angular-animate/angular-animate.js"></script>
-		<script src="deps/angular-resource/angular-resource.js"></script>
-		<script src="deps/angular-cookies/angular-cookies.js"></script>
-		<script src="deps/angular-messages/angular-messages.js"></script>
+		<script src="deps/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="deps/angular-aria/angular-aria.min.js"></script>
+		<script src="deps/angular-animate/angular-animate.min.js"></script>
+		<script src="deps/angular-resource/angular-resource.min.js"></script>
+		<script src="deps/angular-cookies/angular-cookies.min.js"></script>
+		<script src="deps/angular-messages/angular-messages.min.js"></script>
 		<script src="deps/angular-material/angular-material.min.js"></script>
-		<script src="deps/marked/lib/marked.js"></script>
-		<script src="deps/angular-marked/angular-marked.js"></script>
+		<script src="deps/marked/marked.min.js"></script>
+		<script src="deps/angular-marked/angular-marked.min.js"></script>
 		<!-- build:depsScripts scripts/deps.min.js -->
 		<script src="deps/freyja/lib/freyja.js"></script>
 		<script src="deps/freyja/lib/freyja-sessionHandler.js"></script>
@@ -32,7 +30,7 @@
 		<script src="services/lesJardins-api-session.js"></script>
 		<script src="services/lesJardins-api-user.js"></script>
 		<script src="services/lesJardins-api-article.js"></script>
-		<script src="services/lesJardins-api-lot.js"></script>
+		<script src="services/lesJardins-api-channel.js"></script>
 		<script src="controllers/lesJardins-logIn.js"></script>
 		<script src="controllers/lesJardins-header.js"></script>
 		<script src="controllers/lesJardins-sidenav.js"></script>
@@ -42,10 +40,15 @@
 		<script src="controllers/lesJardins-article-view.js"></script>
 		<script src="controllers/lesJardins-article-edit.js"></script>
 		<script src="controllers/lesJardins-profile.js"></script>
+		<script src="controllers/lesJardins-channels.js"></script>
+		<script src="controllers/lesJardins-channel-create.js"></script>
+		<script src="controllers/lesJardins-channel-view.js"></script>
+		<script src="controllers/lesJardins-channel-edit.js"></script>
 		<script src="controllers/lesJardins-contact.js"></script>
-		<script src="controllers/lesJardins-admin-settings.js"></script>
-		<script src="controllers/lesJardins-admin-setting-dataSource-edit.js"></script>
-		<script src="controllers/lesJardins-admin-setting-mailServer-edit.js"></script>
+		<script src="controllers/lesJardins-serviceCharges.js"></script>
+		<script src="controllers/lesJardins-admin-params.js"></script>
+		<script src="controllers/lesJardins-admin-param-dataSource-edit.js"></script>
+		<script src="controllers/lesJardins-admin-param-mailServer-edit.js"></script>
 		<script src="controllers/lesJardins-admin-users.js"></script>
 		<script src="controllers/lesJardins-admin-user-create.js"></script>
 		<script src="controllers/lesJardins-admin-user-view.js"></script>
@@ -54,7 +57,9 @@
 		<script src="controllers/lesJardins-admin-building-create.js"></script>
 		<script src="controllers/lesJardins-admin-building-view.js"></script>
 		<script src="controllers/lesJardins-admin-building-edit.js"></script>
-		<script src="directives/lesJardins-auth-validator.js"></script>
+		<script src="directives/lesJardins-validator-password.js"></script>
+		<script src="directives/lesJardins-validator-confirmation.js"></script>
+		<script src="directives/user-info/lesJardins-user-info.js"></script>
 		<!-- endbuild -->
 	</head>
 	<body layout="row">

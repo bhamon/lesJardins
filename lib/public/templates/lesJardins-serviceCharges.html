@@ -1,0 +1,60 @@
+<md-toolbar md-theme="dark" class="md-hue-3">
+	<div md-theme="default" class="md-toolbar-tools">
+		<h3>Charges</h3>
+	</div>
+</md-toolbar>
+<md-card>
+	<md-card-content>
+		<md-content layout-gt-md="row" layout="column">
+			<div flex>
+				<label>Données de références :</label>
+				<md-radio-group ng-model="data.reference">
+					<md-radio-button value="estimated">Prévisionnelles (provisions)</md-radio-button>
+					<md-radio-button value="real">Réelles (derniers devis en date)</md-radio-button>
+				</md-radio-group>
+			</div>
+			<div flex>
+				<label>Période de calcul :</label>
+				<md-radio-group ng-model="data.divider">
+					<md-radio-button value="1">Annuel</md-radio-button>
+					<md-radio-button value="4">Trimestriel</md-radio-button>
+					<md-radio-button value="12">Mensuel</md-radio-button>
+				</md-radio-group>
+			</div>
+		</md-content>
+	</md-card-content>
+</md-card>
+<md-card>
+	<md-card-content>
+		<table class="lesJardins-serviceCharges-table">
+			<thead>
+				<tr>
+					<th>Poste</th>
+					<th>Tantièmes</th>
+					<th>Montant total</th>
+					<th>Part personnelle</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="category in serviceCharges">
+				<tr>
+					<th>{{category.label}}</th>
+					<th rowspan="{{category.entries.length + 1}}" class="lesJardins-serviceCharges-shares">{{computeShares(category)}}</th>
+					<th>{{computeCategoryTotal(category) | currency:'€'}}</th>
+					<th>{{computeCategoryShare(category) | currency:'€'}}</th>
+				</tr>
+				<tr ng-repeat="entry in category.entries">
+					<td>{{entry.label}}</td>
+					<td>{{computeEntryTotal(entry) | currency:'€'}}</td>
+					<td>{{computeEntryShare(category, entry) | currency:'€'}}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th colspan="2" class="lesJardins-serviceCharges-grandTotal">Total</th>
+					<th>{{computeGrandTotal() | currency:'€'}}</th>
+					<th>{{computeGrandTotalShare() | currency:'€'}}</th>
+				</tr>
+			</tbody>
+		</table>
+	</md-card-content>
+</md-card>

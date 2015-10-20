@@ -1,17 +1,19 @@
 <md-toolbar md-theme="dark" class="md-hue-3">
-	<div class="md-toolbar-tools">
+	<div md-theme="default" class="md-toolbar-tools">
 		<h3>Actualités</h3>
 		<span flex></span>
-		<md-button class="md-icon-button" aria-label="Précédent" ng-click="previous()" ng-disabled="true">
-			<md-tooltip md-theme="default">Précédent</md-tooltip>
+		<md-button class="md-icon-button" aria-label="Précédent" ng-click="previous()" ng-disabled="page == 0">
+			<md-tooltip>Précédent</md-tooltip>
 			<md-icon md-font-library="material-icons" class="md-24">chevron_left</md-icon>
 		</md-button>
-		<md-button class="md-icon-button" aria-label="Suivant" ng-click="next()">
-			<md-tooltip md-theme="default">Suivant</md-tooltip>
+		<span>{{page + 1}}</span>
+		<md-button class="md-icon-button" aria-label="Suivant" ng-click="next()" ng-disabled="articles.length < size">
+			<md-tooltip>Suivant</md-tooltip>
 			<md-icon md-font-library="material-icons" class="md-24">chevron_right</md-icon>
 		</md-button>
 	</div>
 </md-toolbar>
+<md-content ng-if="!articles.length" layout-padding>Aucun article ne correspond à votre recherche.</md-content>
 <md-card ng-repeat="article in articles">
 	<md-card-content>
 		<h1 class="md-title lesJardins-article-title">{{article.title}}</h1>

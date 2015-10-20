@@ -3,13 +3,13 @@
 		<md-button class="md-icon-button" aria-label="Retour" ng-click="gotoBack()">
 			<md-icon md-font-library="material-icons" class="md-24">arrow_back</md-icon>
 		</md-button>
-		<h3>Actualités</h3>
+		<h3>Forum</h3>
 		<span>&nbsp;/&nbsp;</span>
-		<h3>Article</h3>
+		<h3>Sujet</h3>
 		<span>&nbsp;/&nbsp;</span>
-		<h4>{{article.title}}</h4>
+		<h4>{{topic.title}}</h4>
 		<span flex></span>
-		<md-button class="md-icon-button" aria-label="Modifier l'article" ng-click="edit()">
+		<md-button class="md-icon-button" aria-label="Modifier le sujet" ng-click="edit()">
 			<md-tooltip>Modifier</md-tooltip>
 			<md-icon md-font-library="material-icons" class="md-24">create</md-icon>
 		</md-button>
@@ -17,11 +17,11 @@
 </md-toolbar>
 <md-card>
 	<md-card-content>
-		<div class="md-caption lesJardins-article-meta">Publié le {{article.date | date:'dd/MM/yyyy à HH:mm:ss'}} par {{article.author.firstName}} {{article.author.lastName}}.</div>
-		<div marked="article.text"></div>
+		<div class="md-caption lesJardins-topic-meta">Sujet ouvert par {{topic.author.firstName}} {{topic.author.lastName}} le {{topic.date | date:'dd/MM/yyyy à hh:mm:ss'}}.</div>
+		<div marked="topic.text"></div>
 	</md-card-content>
 </md-card>
-<md-content flex offset="5">
+<md-content flex layout-padding>
 	<h3 ng-if="article.comments.length" class="md-title">Commentaires</h3>
 	<md-card ng-repeat="comment in article.comments">
 		<md-card-content>
@@ -29,7 +29,7 @@
 			<div marked="comment.text"></div>
 		</md-card-content>
 	</md-card>
-	<h3 class="md-title">Ajouter un commentaire</h3>
+	<h3 class="md-title">Répondre</h3>
 	<md-content layout="row" layout-md="column">
 		<md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Ajouter le commentaire" ng-click="comment()">
 			<md-icon md-font-library="material-icons" class="md-24">done</md-icon>

@@ -16,10 +16,35 @@ body {
 	margin-bottom:0;
 }
 
-.lesJardins-article-meta, .lesJardins-comment-meta {
+.lesJardins-article-meta, .lesJardins-comment-meta, .lesJardins-topic-meta {
 	font-style:italic;
 }
 
 .lesJardins-article-help, .lesJardins-comment-help {
 	margin-bottom:-24px;
+}
+
+.lesJardins-serviceCharges-table {
+	width:100%;
+}
+
+.lesJardins-serviceCharges-table th {
+	font-weight:normal;
+}
+
+.lesJardins-serviceCharges-table thead th {
+	background-color:#aaaaaa;
+	color:#fff;
+}
+
+.lesJardins-serviceCharges-table tbody th {
+	background-color:#dddddd;
+}
+
+.lesJardins-serviceCharges-table .lesJardins-serviceCharges-shares {
+	vertical-align:top;
+}
+
+.lesJardins-serviceCharges-table .lesJardins-serviceCharges-grandTotal {
+	text-align:right;
 }

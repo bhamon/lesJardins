@@ -1,0 +1,50 @@
+<md-dialog>
+	<form name="formMailServer">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Serveur mail</h2>
+			</div>
+		</md-toolbar>
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<md-select ng-model="data.type" required>
+					<md-option value="smtp">SMTP</md-option>
+				</md-select>
+				<md-input-container>
+					<label>Hôte</label>
+					<input name="host" ng-model="data.host" required>
+					<div ng-messages="formMailServer.host.$error">
+						<div ng-message="required">Champ requis.</div>
+					</div>
+				</md-input-container>
+				<md-input-container>
+					<label>Numéro de port</label>
+					<input type="number" name="port" ng-model="data.port" min="1" max="65535" required>
+					<div ng-messages="formMailServer.port.$error">
+						<div ng-message="required">Champ requis.</div>
+						<div ng-message="min">Numéro de port trop petit.</div>
+						<div ng-message="max">Numéro de port trop grand.</div>
+					</div>
+				</md-input-container>
+				<md-input-container>
+					<label>Nom d'utilisateur</label>
+					<input name="user" ng-model="data.user" required>
+					<div ng-messages="formMailServer.user.$error">
+						<div ng-message="required">Champ requis.</div>
+					</div>
+				</md-input-container>
+				<md-input-container>
+					<label>Mot de passe</label>
+					<input type="password" name="password" ng-model="data.password" required>
+					<div ng-messages="formMailServer.password.$error">
+						<div ng-message="required">Champ requis.</div>
+					</div>
+				</md-input-container>
+			</div>
+		</md-dialog-content>
+		<div class="md-actions" layout="row">
+			<md-button class="md-primary" ng-click="save()">Enregistrer</md-button>
+			<md-button ng-click="cancel()">Annuler</md-button>
+		</div>
+	</form>
+</md-dialog>

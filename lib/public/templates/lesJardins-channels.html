@@ -1,0 +1,48 @@
+<md-toolbar md-theme="dark" class="md-hue-3">
+	<div md-theme="default" class="md-toolbar-tools">
+		<h3>Forum</h3>
+		<span flex></span>
+		<md-button class="md-icon-button" aria-label="Search" ng-click="search()">
+			<md-tooltip>Recherche avancée</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">zoom_in</md-icon>
+		</md-button>
+		<md-input-container flex="20">
+			<label>&nbsp;</label>
+			<input ng-model="data.search">
+		</md-input-container>
+		<md-button class="md-icon-button" aria-label="Précédent" ng-click="previous()" ng-disabled="true">
+			<md-tooltip>Précédent</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">chevron_left</md-icon>
+		</md-button>
+		<md-button class="md-icon-button" aria-label="Suivant" ng-click="next()">
+			<md-tooltip>Suivant</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">chevron_right</md-icon>
+		</md-button>
+		<md-button class="md-icon-button" aria-label="Ajouter un fil de discussion" ng-click="add()">
+			<md-tooltip>Ajouter</md-tooltip>
+			<md-icon md-font-library="material-icons" class="md-24">add</md-icon>
+		</md-button>
+	</div>
+</md-toolbar>
+<md-list>
+	<md-subheader>Categorie 1</md-subheader>
+	<md-list-item ng-repeat="topic in topics" class="md-3-line" ng-click="view(topic)">
+		<md-icon md-font-library="material-icons" class="md-24">message</md-icon>
+		<div class="md-list-item-text">
+			<h3>{{topic.title}}</h3>
+			<p>Sujet ouvert par {{topic.author.firstName}} {{topic.author.lastName}} le {{topic.date | date:'dd/MM/yyyy à hh:mm:ss'}}.</p>
+			<p>{{topic.stats.read}} utilisateurs ont lu ce sujet, {{topic.stats.replies}} y ont répondu.</p>
+		</div>
+		<md-icon md-font-library="material-icons" class="md-24 md-secondary" aria-label="Supprimer l'utilisateur" ng-click="remove(topic)">delete</md-icon>
+	</md-list>
+	<md-subheader>Categorie 2</md-subheader>
+	<md-list-item ng-repeat="topic in topics" class="md-3-line" ng-click="view(topic)">
+		<md-icon md-font-library="material-icons" class="md-24">message</md-icon>
+		<div class="md-list-item-text">
+			<h3>{{topic.title}}</h3>
+			<p>Sujet ouvert par {{topic.author.firstName}} {{topic.author.lastName}} le {{topic.date | date:'dd/MM/yyyy à hh:mm:ss'}}.</p>
+			<p>{{topic.stats.read}} utilisateurs ont lu ce sujet, {{topic.stats.replies}} y ont répondu.</p>
+		</div>
+		<md-icon md-font-library="material-icons" class="md-24 md-secondary" aria-label="Supprimer l'utilisateur" ng-click="remove(topic)">delete</md-icon>
+	</md-list>
+</md-list>
